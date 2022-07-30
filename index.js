@@ -8,7 +8,7 @@ import {
   registerValidation,
   loginValidation,
   postCreateValidation,
-  commentValidation,
+  commentCreateValidation,
 } from './validations.js';
 import { checkAuth, handleValidationErrors } from './utils/index.js';
 
@@ -47,7 +47,7 @@ app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
 app.post(
   '/comments',
   checkAuth,
-  commentValidation,
+  commentCreateValidation,
   handleValidationErrors,
   CommentController.create,
 );
