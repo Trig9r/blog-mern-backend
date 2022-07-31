@@ -68,10 +68,8 @@ app.patch(
   PostController.update,
 );
 
-app.listen(process.env.PORT || 4444, (err) => {
-  if (err) {
-    return console.log(err);
-  }
+const port = process.env.PORT || 4444;
 
-  console.log('Server OK!');
+app.listen(port, () => {
+  console.log('App is running on port ' + port);
 });
